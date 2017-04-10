@@ -1,14 +1,13 @@
-using NUnit.Framework;
+using Xunit;
 using System.Linq;
 using Thesis.Relinq.NpgsqlWrapper;
 using Thesis.Relinq.UnitTests.Models;
 
 namespace Thesis.Relinq.UnitTests
 {
-    [TestFixture]
     public class ResultOperatorTests : ThesisTestsBase
     {
-        [Test]
+        [Fact]
         public void select_count()
         {
             // Arrange
@@ -27,11 +26,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Count();
 
             // Assert
-            Assert.AreEqual(expected, actual);
-            Assert.AreEqual(expected, actual2);
+            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void select_average()
         {
             // Arrange
@@ -50,11 +49,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Average();
 
             // Assert
-            Assert.AreEqual(expected, actual);
-            Assert.AreEqual(expected, actual2);
+            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void select_sum()
         {
             // Arrange
@@ -73,11 +72,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Sum();
 
             // Assert
-            Assert.AreEqual(expected, actual);
-            Assert.AreEqual(expected, actual2);
+            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual2);
         }
         
-        [Test]
+        [Fact]
         public void select_min()
         {
             // Arrange
@@ -96,11 +95,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Min();
 
             // Assert
-            Assert.AreEqual(expected, actual);
-            Assert.AreEqual(expected, actual2);
+            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void select_max()
         {
             // Arrange
@@ -119,8 +118,8 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Max();
 
             // Assert
-            Assert.AreEqual(expected, actual);
-            Assert.AreEqual(expected, actual2);
+            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual2);
         }
     }
 }

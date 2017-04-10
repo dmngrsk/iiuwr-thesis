@@ -1,14 +1,13 @@
-using NUnit.Framework;
+using Xunit;
 using System.Linq;
 using Thesis.Relinq.NpgsqlWrapper;
 using Thesis.Relinq.UnitTests.Models;
 
 namespace Thesis.Relinq.UnitTests
 {
-    [TestFixture]
     public class MethodCallsTests : ThesisTestsBase
     {
-        [Test]
+        [Fact]
         public void equals()
         {
             // Arrange
@@ -28,11 +27,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void take()
         {
             // Arrange
@@ -51,11 +50,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Take(5).ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void skip()
         {
             // Arrange
@@ -74,11 +73,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Skip(5).ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void take_and_skip()
         {
             // Arrange
@@ -97,11 +96,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.Take(3).Skip(5).ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void to_lower()
         {
             // Arrange
@@ -120,11 +119,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void to_upper()
         {
             // Arrange
@@ -143,41 +142,41 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void contains()
         {
             
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void substring()
         {
             
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void length()
         {
             
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void starts_with()
         {
             
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void ends_with()
         {
             
         }
 
-        [Test]
+        [Fact]
         public void trim()
         {
             // Arrange
@@ -196,11 +195,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void trim_start()
         {
             // Arrange
@@ -219,11 +218,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void trim_end()
         {
             // Arrange
@@ -242,11 +241,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void trim_whitespace()
         {
             // Arrange
@@ -265,11 +264,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void trim_start_whitespace()
         {
             // Arrange
@@ -288,11 +287,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void trim_end_whitespace()
         {
             // Arrange
@@ -311,23 +310,23 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void concat()
         {
             
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void reverse()
         {
             
         }
 
-        [Test, IgnoreAttribute("Feature not implemented yet")]
+        [Fact(Skip="Feature not implemented yet")]
         public void replace()
         {
             

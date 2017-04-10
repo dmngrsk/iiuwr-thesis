@@ -1,14 +1,13 @@
-using NUnit.Framework;
+using Xunit;
 using System.Linq;
 using Thesis.Relinq.NpgsqlWrapper;
 using Thesis.Relinq.UnitTests.Models;
 
 namespace Thesis.Relinq.UnitTests
 {
-    [TestFixture]
     public class BinaryExpressionTests : ThesisTestsBase
     {
-        [Test]
+        [Fact]
         public void equal()
         {
             // Arrange
@@ -28,11 +27,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void not_equal()
         {
             // Arrange
@@ -52,11 +51,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void greater_than()
         {
             // Arrange
@@ -76,11 +75,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void greater_than_or_equal()
         {
             // Arrange
@@ -100,11 +99,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void less_than()
         {
             // Arrange
@@ -124,11 +123,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void less_than_or_equal()
         {
             // Arrange
@@ -148,11 +147,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void add()
         {
             // Arrange
@@ -172,11 +171,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void substract()
         {
             // Arrange
@@ -196,11 +195,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void multiply()
         {
             // Arrange
@@ -220,11 +219,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void divide()
         {
             // Arrange
@@ -244,11 +243,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void modulo()
         {
             // Arrange
@@ -268,11 +267,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void bitwise_and()
         {
             // Arrange
@@ -292,11 +291,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void bitwise_or()
         {
             // Arrange
@@ -316,11 +315,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void bitwise_xor()
         {
             // Arrange
@@ -340,11 +339,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void bitwise_shift_left()
         {
             // Arrange
@@ -364,11 +363,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void bitwise_shift_right()
         {
             // Arrange
@@ -388,11 +387,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void logical_and()
         {
             // Arrange
@@ -413,11 +412,11 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
 
-        [Test]
+        [Fact]
         public void logical_or()
         {
             // Arrange
@@ -438,8 +437,8 @@ namespace Thesis.Relinq.UnitTests
             var actual2 = myQuery2.ToArray();
 
             // Assert
-            AssertExtension.AreEqualByJson(expected, actual);
-            AssertExtension.AreEqualByJson(expected, actual2);
+            AssertExtension.EqualByJson(expected, actual);
+            AssertExtension.EqualByJson(expected, actual2);
         }
     }
 }
